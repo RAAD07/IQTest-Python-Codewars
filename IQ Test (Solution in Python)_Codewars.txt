@@ -1,0 +1,29 @@
+def iq_test(numbers):
+    #your code here
+    countEven=0
+    countOdd=0
+    index=0
+    
+    #removing the spaces in between the numbers in the given string
+    numbers=numbers.split(" ")
+
+    #given input was an string.so now casting those strings to integers
+    #also can ommit this line as i have used casting inside the loops
+    num=[int(s) for s in numbers]
+    
+    for i in range(len(numbers)):
+        if int(numbers[i])%2==0:
+            countEven=countEven+1
+        else:
+            countOdd=countOdd+1
+            
+    if countEven>countOdd:
+        for i in range(len(numbers)):
+            if int(numbers[i])%2!=0:
+                index=i+1
+            
+    else:
+        for i in range(len(numbers)):
+            if int(numbers[i])%2==0:
+                index=i+1
+    return index
